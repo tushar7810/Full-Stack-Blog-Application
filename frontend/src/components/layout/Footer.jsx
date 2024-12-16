@@ -72,13 +72,13 @@ const Footer = () => {
           <Link to={"/"} target="_blank">
             <AiFillInstagram />
           </Link>
-          <Link to={"/"} target="_blank">
+          <Link to={"https://github.com/tushar7810"} target="_blank">
             <FaGitSquare />
           </Link>
-          <Link to={"/"} target="_blank">
+          <Link to={"https://www.youtube.com/@informertushar"} target="_blank">
             <AiFillYoutube />
           </Link>
-          <Link to={"/"} target="_blank">
+          <Link to={"https://www.linkedin.com/in/tushar-sil-332a15287/"} target="_blank">
             <AiFillLinkedin />
           </Link>
         </div>
