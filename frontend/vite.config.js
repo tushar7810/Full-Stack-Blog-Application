@@ -10,8 +10,8 @@ dotenv.config({
 export default defineConfig({
   server: {
     proxy: {
-      '/blog' : `https://full-stack-blog-application-ioqd.onrender.com`,
-      '/user' : `https://full-stack-blog-application-ioqd.onrender.com`
+      '/blog' : `https://full-stack-blog-application-ioqd.onrender.com/`,
+      '/user' : `https://full-stack-blog-application-ioqd.onrender.com/`
     }
   },
   plugins: [react()],
