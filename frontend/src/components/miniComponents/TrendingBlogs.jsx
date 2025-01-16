@@ -35,14 +35,17 @@ function TrendingBlogs() {
   };
 
 
+  console.log(blogs)
   return (
     <>
     <div className='trending'>
       <h3>Trending</h3>
       <Carousel responsive={responsive}>
         {
-          blogs && blogs.length > 0 ? (
+          blogs && blogs.length> 0 ? (
+
             blogs.slice(0,6).map(element => {
+
               return(
                 <Link to={`/blog/${element._id}`} className="card" key={element._id} > 
                   <img src={element.mainImage.url} alt="blogImg" />
