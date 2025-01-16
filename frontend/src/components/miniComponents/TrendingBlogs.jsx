@@ -44,7 +44,7 @@ function TrendingBlogs() {
         {
           blogs && blogs.length> 0 ? (
 
-            blogs.slice(0,6).map(element => {
+            blogs.map(element => {
 
               return(
                 <Link to={`/blog/${element._id}`} className="card" key={element._id} > 
