@@ -10,7 +10,7 @@ const LatestBlog = ({newClass ,blogs,heading}) => {
       <h3>{heading}</h3>
       <div className="container">
         {
-          blogs && blogs.length > 0 ?  blogs.map(element => {
+          blogs && blogs.length > 0 ?  blogs.map((element) => {
             return(
               <Link to={`/blog/${element._id}`} key={element._id} className='card'>
                 <img src={element.mainImage.url} alt="mainImg" />
