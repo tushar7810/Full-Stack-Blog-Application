@@ -31,7 +31,7 @@ const App = () => {
       } catch (error) {
         setIsAuthenticated(false);
         setUser({});
-      }
+      }   
     };
     const fetchBlogs = async () => {
       try {
