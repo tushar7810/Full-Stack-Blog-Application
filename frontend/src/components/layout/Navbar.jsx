@@ -21,7 +21,7 @@ const Navbar = () => {
     setShow(!show);
   };
   
-  const isDashboard = useLocation("http://localhost:5173/dashboard");
+  const isDashboard = useLocation("https://tushat-sil-blog-application.vercel.app/dashboard");
   
   const { mode, setMode, isAuthenticated, user, setIsAuthenticated } = useContext(Context);
   
