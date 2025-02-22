@@ -7,7 +7,7 @@ import PopularAuthor from "../miniComponents/PopularAuthor.jsx"
 
 const Home = () => {
   const {mode , blogs } = useContext(Context)
-  const filterBlogs = blogs.slice(0, 6);
+  const filterBlogs = blogs.slice(1, 6);
   return (
     <article className={mode === "dark" ? "dark-bg" : "light-bg"}>
       <HeroSection />
