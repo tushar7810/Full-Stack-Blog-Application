@@ -62,8 +62,9 @@ export const register = catchAsyncErrors(async(req,res,next) => {
     })
 })
 
-export const login = catchAsyncErrors(async(req,res,next) => {
-    const {email,password,role} = req.body;
+export const login = catchAsyncErrors( async(req,res,next) => {
+
+    const { email , password , role} = req.body ;
 
     if(!email || !password || !role ){
         return next(new ErrorHandler("Please fill full details" , 400))
@@ -82,7 +83,6 @@ export const login = catchAsyncErrors(async(req,res,next) => {
     }
     
     sendCookieToken(user,200,"User logged in successfully", res)
-
 })
 
 export const logout = catchAsyncErrors((req,res,next) => {
