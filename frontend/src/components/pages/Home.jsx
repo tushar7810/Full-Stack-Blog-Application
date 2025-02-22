@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Context } from '../../main';
+import { Context } from '../../main.jsx';
 import HeroSection from "../miniComponents/HeroSection.jsx"
 import TrendingBlogs from "../miniComponents/TrendingBlogs.jsx"
 import LatestBlog from "../miniComponents/LatestBlog.jsx"
@@ -7,7 +7,7 @@ import PopularAuthor from "../miniComponents/PopularAuthor.jsx"
 
 const Home = () => {
   const {mode , blogs } = useContext(Context)
-  const filterBlogs = blogs.slice(1, 6);
+  const filterBlogs = Array.isArray(blogs) ? blogs.slice(1, 6) : [];;
   return (
     <article className={mode === "dark" ? "dark-bg" : "light-bg"}>
       <HeroSection />
