@@ -7,9 +7,8 @@ const PopularAuthor = () => {
   const [authors, setAuthors] = useState([])
   useEffect(() => {
     const fetchUser = async () => {
-      const {data} = await axios.get("/user/authors", {withCredentials: true})
+      const {data} = await axios.get(`${process.env.BACKEND_URL}/user/authors`, {withCredentials: true})
       setAuthors(data.authors)
-      // console.log(data.authors);
     }
     fetchUser()
   }, [])

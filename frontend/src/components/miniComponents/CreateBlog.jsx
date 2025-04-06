@@ -90,7 +90,7 @@ const CreateBlog = () => {
     }
 
     try {
-      await axios.post("/blog/post", formData , {withCredentials: true , headers: {"Content-Type" : "mutlipart/form-data"}})
+      await axios.post(`${process.env.BACKEND_URL}/blog/post`, formData , {withCredentials: true , headers: {"Content-Type" : "mutlipart/form-data"}})
       .then( res => {
         setTitle(""),
         setIntro(""),

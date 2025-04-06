@@ -23,7 +23,7 @@ const SideBar = ({ setComponent }) => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        "user/logout",{ withCredentials: true }
+        `${process.env.BACKEND_URL}/user/logout`,{ withCredentials: true }
       ).then(res => {
         setIsAuthenticated(false);
       toast.success(res.data.message);

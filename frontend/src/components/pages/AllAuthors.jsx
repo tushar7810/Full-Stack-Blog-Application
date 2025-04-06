@@ -8,7 +8,7 @@ function AllAuthors() {
   const [authors, setAuthors] = useState([])
   useEffect( () => {
     const fetchAuthors = async() => {
-      const {data} = await axios.get("/user/authors", {withCredentials: true})
+      const {data} = await axios.get(`${process.env.BACKEND_URL}/user/authors`, {withCredentials: true})
       // console.log(data);
       setAuthors(data.authors)
     }

@@ -4,7 +4,6 @@ import LatestBlog from '../miniComponents/LatestBlog.jsx';
 
 const Blogs = () => {
   const { mode, blogs } = useContext(Context)
-  // console.log(setBlogs);
 
   return (
     <article className={mode === "dark" ? "dark-bg" : "light-bg"}>

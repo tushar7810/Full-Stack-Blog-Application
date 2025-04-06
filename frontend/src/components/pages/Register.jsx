@@ -38,7 +38,7 @@ function Register() {
     formData.append("avatar",avatar)
 
     try {
-      const {data} = await axios.post('/user/register',formData,
+      const {data} = await axios.post(`${process.env.BACKEND_URL}/user/register`,formData,
         {
           withCredentials: true ,
           headers: {"Content-Type": "multipart/form-data"}

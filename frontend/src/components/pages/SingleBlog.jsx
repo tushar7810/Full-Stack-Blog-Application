@@ -10,7 +10,7 @@ function SingleBlog() {
   useEffect( () => {
     const getSingleBlog = async() =>{
       try {
-        const {data} = await axios.get(`/blog/oneBlog/${id}` , {withCredentials: true})
+        const {data} = await axios.get(`${process.env.BACKEND_URL}/blog/oneBlog/${id}` , {withCredentials: true})
         console.log(data.blog);
         setBlog(data.blog)
       } catch (error) {

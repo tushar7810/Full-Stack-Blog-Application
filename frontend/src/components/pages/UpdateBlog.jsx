@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React , { useEffect, useState , useContext } from 'react';
 import toast from 'react-hot-toast';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Context } from '../../main';
 
 const UpdateBlog = () =>{
@@ -25,10 +25,12 @@ const UpdateBlog = () =>{
   const [title , setTitle] = useState("")
   const [published , setPublished] = useState(true)
 
+  const navigateTo = useNavigate()
+
   useEffect(() => {
     const fetchBlog = async() => {
       try {
-        const {data} = await axios.get(`/blog/oneBlog/${id}` , {withCredentials: true})
+        const {data} = await axios.get(`${process.env.BACKEND_URL}/blog/oneBlog/${id}` , {withCredentials: true})
         setTitle(data.blog.title)
         setIntro(data.blog.intro)
         setCategory(data.blog.category)
@@ -99,9 +101,10 @@ const UpdateBlog = () =>{
     }
 
     try {
-      await axios.put(`/blog/updateBlog/${id}` , updatedData , {withCredentials: true})
+      await axios.put(`${process.env.BACKEND_URL}/blog/updateBlog/${id}` , updatedData , {withCredentials: true})
       .then(res => {
         toast.success(res.data.message)
+        navigateTo('/')
       })
       
     } catch (error) {

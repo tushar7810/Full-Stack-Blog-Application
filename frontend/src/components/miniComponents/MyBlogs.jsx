@@ -9,9 +9,8 @@ function MyBlogs() {
   useEffect(() => {
     const fetchMyBlogs = async() => {
       try {
-        const {data} = await axios.get("/blog/myBlogs" , {withCredentials: true})
+        const {data} = await axios.get(`${process.env.BACKEND_URL}/blog/myBlogs` , {withCredentials: true})
           setMyBlogs(data.blogs)
-        // })
       } catch (error) {
         toast.error(error.response.data.message)
       }
@@ -20,7 +19,7 @@ function MyBlogs() {
   },[])
 
   const deleteBlogHandler = async(id) => {
-    await axios.delete(`/blog/delete/${id}` , {withCredentials: true})
+    await axios.delete(`${process.env.BACKEND_URL}/blog/delete/${id}` , {withCredentials: true})
     .then(res => {
       toast.success(res.data.message)
       setMyBlogs((prevBlogs) => prevBlogs.filter((blog) => blog._id !== id))

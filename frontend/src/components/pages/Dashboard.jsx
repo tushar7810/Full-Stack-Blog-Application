@@ -10,7 +10,6 @@ import MyBlogs from "../miniComponents/MyBlogs.jsx"
 function Dashboard() {
   const {mode , isAuthenticated, user} = useContext(Context)
   const [component,setComponent] = useState("MyBlogs")
-
   if(!isAuthenticated || user.role === "Reader"){
     return <Navigate to={"/"}/>
   }

@@ -29,7 +29,7 @@ function Chart() {
   const [myBlogs , setMyBlogs] = useState([])
   useEffect(() => {
     const fetchMyBlogs = async() => {
-        const {data} = await axios.get("/blog/myBlogs" , {withCredentials: true})
+        const {data} = await axios.get(`${process.env.BACKEND_URL}/blog/myBlogs` , {withCredentials: true})
         setMyBlogs(data.blogs)
       }
     fetchMyBlogs()
