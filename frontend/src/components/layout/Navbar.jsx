@@ -30,7 +30,7 @@ const Navbar = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        "user/logout",
+        `${process.env.BACKEND_URL}/user/logout`,
         { withCredentials: true }
       );
       setIsAuthenticated(false);
