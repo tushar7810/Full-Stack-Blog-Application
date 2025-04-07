@@ -8,9 +8,10 @@ import Chart from "../miniComponents/Chart.jsx"
 import MyBlogs from "../miniComponents/MyBlogs.jsx"
 
 function Dashboard() {
-  const {mode , isAuthenticated, user} = useContext(Context)
+  const {mode , isAuthenticated, role} = useContext(Context)
   const [component,setComponent] = useState("MyBlogs")
-  if(!isAuthenticated || user.role === "Reader"){
+
+  if(!isAuthenticated || role === "Reader"){
     return <Navigate to={"/"}/>
   }
   return (

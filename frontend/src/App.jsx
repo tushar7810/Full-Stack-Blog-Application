@@ -23,7 +23,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        await Axios.get("/user/profile",{withCredentials: true})
+        await Axios.get(`${process.env.BACKEND_URL}/user/profile`,{withCredentials: true})
         .then(res => {
           setUser(res.data.user)
         })
@@ -35,10 +35,9 @@ const App = () => {
     };
     const fetchBlogs = async () => {
       try {
-        const {data} = await Axios.get("/blog/allBlogs",{withCredentials: true})
+        const {data} = await Axios.get(`${process.env.BACKEND_URL}/blog/allBlogs`,{withCredentials: true})
         setBlogs(data.allBlogs)
       } catch (error) {
-        // console.log(error)
         setBlogs([]);
       }
     };

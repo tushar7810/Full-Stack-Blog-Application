@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const CreateBlog = () => {
   const [category , setCategory] = useState("")
@@ -59,6 +60,8 @@ const CreateBlog = () => {
     }
   }
 
+  const navigateTo = useNavigate()
+
   const handleBlog = async(e) => {
     e.preventDefault();
     const formData = new FormData()
@@ -111,6 +114,7 @@ const CreateBlog = () => {
         setParaThreeDescription(""),
         setPublished(true)
         toast.success(res.data.message)
+        navigateTo('/')
       }
       )
     } catch (error) {

@@ -34,8 +34,6 @@ function TrendingBlogs() {
     }
   };
 
-
-  // console.log(blogs)
   return (
     <>
     <div className='trending'>

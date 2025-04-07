@@ -14,7 +14,7 @@ function Login() {
 
   const handleLogin = async(e) => {
     e.preventDefault()
-    await axios.post(`${process.env.BACKEND_URL}/user/login`, {email , password , role} , {withCredentials:true , headers: {"Content-Type": "application/json"}})
+    const {data} = await axios.post(`${process.env.BACKEND_URL}/user/login`, {email , password , role} , {withCredentials:true , headers: {"Content-Type": "application/json"}})
     .then(res => {
       toast.success(res.data.message)
       setEmail('')
