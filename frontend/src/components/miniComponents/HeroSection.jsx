@@ -10,7 +10,7 @@ function HeroSection() {
       {
         blogs && blogs.length > 0 ? (blogs.slice(0,3).map(element => {
           return (
-            <Link to={`/blog/${element._id}`} className='card' key={element._id}>
+            <Link to={`${process.env.BACKEND_URL}/blog/${element._id}`} className='card' key={element._id}>
               <img src={element.mainImage.url} alt="mainImage.jpg" className='blogImg'/>
               <h1>{element.title}</h1>
               <div className='writer_section'>
