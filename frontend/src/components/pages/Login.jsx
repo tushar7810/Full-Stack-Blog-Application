@@ -20,7 +20,7 @@ function Login() {
       setEmail('')
       setPassword('')
       setRole('')
-      nevigateTo('/')
+      // nevigateTo('/')
     }).catch((err) => {
       toast.error(err.response.data.message)
     })
