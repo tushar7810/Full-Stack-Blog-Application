@@ -23,10 +23,10 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        await Axios.get(`${process.env.BACKEND_URL}/user/profile`,{withCredentials: true})
-        .then(res => {
-          setUser(res.data.user)
-        })
+        const {data} = await Axios.get(`${process.env.BACKEND_URL}/user/profile`,{withCredentials: true})
+        .then(
+          setUser(data.user)
+        )
         setIsAuthenticated(true);
       } catch (error) {
         setIsAuthenticated(false);
